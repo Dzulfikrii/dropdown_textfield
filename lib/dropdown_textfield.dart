@@ -1025,8 +1025,12 @@ class _SingleSelectionState extends State<SingleSelection> {
                       alignment: Alignment.centerLeft,
                       child: FittedBox(
                         fit: BoxFit.fitHeight,
-                        child: Text(newDropDownList[index].name,
-                            style: widget.listTextStyle),
+                        child: Text(
+                            newDropDownList[index].name,
+                            style: widget.listTextStyle,
+                            maxLines: 2, // Set the maximum number of lines
+                            overflow: TextOverflow.ellipsis, // Define overflow behavior
+                        ),
                       ),
                     ),
                   ),
@@ -1110,6 +1114,8 @@ class _MultiSelectionState extends State<MultiSelection> {
                                     Expanded(
                                       child: Text(
                                           widget.dropDownList[index].name,
+                                          maxLines: 2, // Set the maximum number of lines
+                                          overflow: TextOverflow.ellipsis, // Define overflow behavior
                                           style: widget.listTextStyle),
                                     ),
                                     if (widget.dropDownList[index].toolTipMsg !=
