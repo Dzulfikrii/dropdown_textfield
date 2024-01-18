@@ -1185,7 +1185,7 @@ class _MultiSelectionState extends State<MultiSelection> {
                     child: FittedBox(
                       fit: BoxFit.contain,
                       child: Text(
-                        widget.buttonText ?? "Ok",
+                        widget.buttonText ?? "HEHE",
                         style: widget.buttonTextStyle ??
                             const TextStyle(fontWeight: FontWeight.bold),
                       ),
