@@ -1026,7 +1026,7 @@ class _SingleSelectionState extends State<SingleSelection> {
                       child: FittedBox(
                         fit: BoxFit.fitHeight,
                         child: Text(
-                            newDropDownList[index].name,
+                            "test 1: " + newDropDownList[index].name.toString(),
                             style: widget.listTextStyle,
                             maxLines: 2, // Set the maximum number of lines
                             overflow: TextOverflow.ellipsis, // Define overflow behavior
@@ -1113,7 +1113,7 @@ class _MultiSelectionState extends State<MultiSelection> {
                                   children: [
                                     Expanded(
                                       child: Text(
-                                          widget.dropDownList[index].name,
+                                          "test 1: " + widget.dropDownList[index].name.toString(),
                                           maxLines: 2, // Set the maximum number of lines
                                           overflow: TextOverflow.ellipsis, // Define overflow behavior
                                           style: widget.listTextStyle),
