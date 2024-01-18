@@ -1019,16 +1019,14 @@ class _SingleSelectionState extends State<SingleSelection> {
                     padding: EdgeInsets.only(
                         left: 10,
                         right: 10,
-                        bottom: widget.listPadding.bottom,
                         top: widget.listPadding.top),
                     child: Align(
                       alignment: Alignment.centerLeft,
-                      child: FittedBox(
-                        fit: BoxFit.fitHeight,
-                        child: Text(
-                            newDropDownList[index].name.toString(),
-                            style: widget.listTextStyle,
-                        ),
+                      child: Text(
+                          newDropDownList[index].name.toString(),
+                          style: widget.listTextStyle,
+                          maxLines: 3, // Set the maximum number of lines
+                          overflow: TextOverflow.ellipsis, // Define overflow behavior
                       ),
                     ),
                   ),
