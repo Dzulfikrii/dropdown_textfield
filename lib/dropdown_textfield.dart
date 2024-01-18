@@ -1023,12 +1023,13 @@ class _SingleSelectionState extends State<SingleSelection> {
                         top: widget.listPadding.top),
                     child: Align(
                       alignment: Alignment.centerLeft,
-                      child: Text(
-                            "test 1: " + newDropDownList[index].name.toString(),
+                      child: FittedBox(
+                        fit: BoxFit.fitHeight,
+                        child: Text(
+                            newDropDownList[index].name.toString(),
                             style: widget.listTextStyle,
-                            maxLines: 2, // Set the maximum number of lines
-                            overflow: TextOverflow.ellipsis, // Define overflow behavior
                         ),
+                      ),
                     ),
                   ),
                 );
@@ -1110,7 +1111,7 @@ class _MultiSelectionState extends State<MultiSelection> {
                                   children: [
                                     Expanded(
                                       child: Text(
-                                          "test 2: " + widget.dropDownList[index].name.toString(),
+                                          widget.dropDownList[index].name.toString(),
                                           maxLines: 2, // Set the maximum number of lines
                                           overflow: TextOverflow.ellipsis, // Define overflow behavior
                                           style: widget.listTextStyle),
