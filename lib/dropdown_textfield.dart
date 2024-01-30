@@ -477,34 +477,34 @@ class _DropDownTextFieldState extends State<DropDownTextField>
     super.dispose();
   }
 
-  clearFun() {
-    if (_isExpanded) {
-      _isExpanded = !_isExpanded;
-      hideOverlay();
-    }
-    _cnt.clear();
-    if (widget.isMultiSelection) {
-      if (widget.multiController != null) {
-        widget.multiController!.setDropDown(null);
-      }
-      if (widget.onChanged != null) {
-        widget.onChanged!([]);
-      }
+  // clearFun() {
+  //   if (_isExpanded) {
+  //     _isExpanded = !_isExpanded;
+  //     hideOverlay();
+  //   }
+  //   _cnt.clear();
+  //   if (widget.isMultiSelection) {
+  //     if (widget.multiController != null) {
+  //       widget.multiController!.setDropDown(null);
+  //     }
+  //     if (widget.onChanged != null) {
+  //       widget.onChanged!([]);
+  //     }
 
-      _multiSelectionValue = [];
-      for (int i = 0; i < _dropDownList.length; i++) {
-        _multiSelectionValue.add(false);
-      }
-    } else {
-      if (widget.singleController != null) {
-        widget.singleController!.setDropDown(null);
-      }
-      if (widget.onChanged != null) {
-        widget.onChanged!("");
-      }
-    }
-    setState(() {});
-  }
+  //     _multiSelectionValue = [];
+  //     for (int i = 0; i < _dropDownList.length; i++) {
+  //       _multiSelectionValue.add(false);
+  //     }
+  //   } else {
+  //     if (widget.singleController != null) {
+  //       widget.singleController!.setDropDown(null);
+  //     }
+  //     if (widget.onChanged != null) {
+  //       widget.onChanged!("");
+  //     }
+  //   }
+  //   setState(() {});
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -540,51 +540,109 @@ class _DropDownTextFieldState extends State<DropDownTextField>
                 widget.validator != null ? widget.validator!(value) : null,
             decoration: widget.textFieldDecoration != null
                 ? widget.textFieldDecoration!.copyWith(
-                    suffixIcon: (_cnt.text.isEmpty || !widget.clearOption)
-                        ? Icon(
-                            widget.dropDownIconProperty?.icon ??
-                                Icons.arrow_drop_down_outlined,
-                            size: widget.dropDownIconProperty?.size,
-                            color: widget.dropDownIconProperty?.color,
-                          )
-                        : widget.clearOption
-                            ? InkWell(
-                                onTap: clearFun,
-                                child: Icon(
-                                  widget.clearIconProperty?.icon ?? Icons.clear,
-                                  size: widget.clearIconProperty?.size,
-                                  color: widget.clearIconProperty?.color,
-                                ),
-                              )
-                            : null,
+                    suffixIcon: Icon(
+                      widget.dropDownIconProperty?.icon ??
+                          Icons.arrow_drop_down_outlined,
+                      size: widget.dropDownIconProperty?.size,
+                      color: widget.dropDownIconProperty?.color,
+                    ),
                   )
                 : InputDecoration(
                     floatingLabelBehavior: FloatingLabelBehavior.always,
                     hintText: _hintText,
                     hintStyle: const TextStyle(fontWeight: FontWeight.normal),
-                    suffixIcon: (_cnt.text.isEmpty || !widget.clearOption)
-                        ? Icon(
-                            widget.dropDownIconProperty?.icon ??
-                                Icons.arrow_drop_down_outlined,
-                            size: widget.dropDownIconProperty?.size,
-                            color: widget.dropDownIconProperty?.color,
-                          )
-                        : widget.clearOption
-                            ? InkWell(
-                                onTap: clearFun,
-                                child: Icon(
-                                  widget.clearIconProperty?.icon ?? Icons.clear,
-                                  size: widget.clearIconProperty?.size,
-                                  color: widget.clearIconProperty?.color,
-                                ),
-                              )
-                            : null,
+                    suffixIcon: Icon(
+                      widget.dropDownIconProperty?.icon ??
+                          Icons.arrow_drop_down_outlined,
+                      size: widget.dropDownIconProperty?.size,
+                      color: widget.dropDownIconProperty?.color,
+                    ),
                   ),
           ),
         );
       },
     );
   }
+
+  // @override
+  // Widget build(BuildContext context) {
+  //   _isPortrait = MediaQuery.of(context).orientation == Orientation.portrait;
+  //   return KeyboardVisibilityBuilder(
+  //     builder: (context, isKeyboardVisible) {
+  //       if (!isKeyboardVisible && _isExpanded && _isScrollPadding) {
+  //         WidgetsBinding.instance.addPostFrameCallback((_) {
+  //           shiftOverlayEntry2to1();
+  //         });
+  //       }
+  //       return CompositedTransformTarget(
+  //         link: _layerLink,
+  //         child: TextFormField(
+  //           controller: _cnt,
+  //           focusNode: _textFieldFocusNode,
+  //           keyboardType: widget.keyboardType,
+  //           autovalidateMode: widget.autovalidateMode,
+  //           style: widget.textStyle,
+  //           enabled: widget.isEnabled,
+  //           readOnly: widget.readOnly,
+  //           onTap: () {
+  //             _searchAutofocus = widget.searchAutofocus;
+  //             if (!_isExpanded) {
+  //               if (_dropDownList.isNotEmpty) {
+  //                 _showOverlay();
+  //               }
+  //             } else {
+  //               if (widget.readOnly) hideOverlay();
+  //             }
+  //           },
+  //           validator: (value) =>
+  //               widget.validator != null ? widget.validator!(value) : null,
+  //           decoration: widget.textFieldDecoration != null
+  //               ? widget.textFieldDecoration!.copyWith(
+  //                   suffixIcon: (_cnt.text.isEmpty || !widget.clearOption)
+  //                       ? Icon(
+  //                           widget.dropDownIconProperty?.icon ??
+  //                               Icons.arrow_drop_down_outlined,
+  //                           size: widget.dropDownIconProperty?.size,
+  //                           color: widget.dropDownIconProperty?.color,
+  //                         )
+  //                       : widget.clearOption
+  //                           ? InkWell(
+  //                               onTap: clearFun,
+  //                               child: Icon(
+  //                                 widget.clearIconProperty?.icon ?? Icons.clear,
+  //                                 size: widget.clearIconProperty?.size,
+  //                                 color: widget.clearIconProperty?.color,
+  //                               ),
+  //                             )
+  //                           : null,
+  //                 )
+  //               : InputDecoration(
+  //                   floatingLabelBehavior: FloatingLabelBehavior.always,
+  //                   hintText: _hintText,
+  //                   hintStyle: const TextStyle(fontWeight: FontWeight.normal),
+  //                   suffixIcon: (_cnt.text.isEmpty || !widget.clearOption)
+  //                       ? Icon(
+  //                           widget.dropDownIconProperty?.icon ??
+  //                               Icons.arrow_drop_down_outlined,
+  //                           size: widget.dropDownIconProperty?.size,
+  //                           color: widget.dropDownIconProperty?.color,
+  //                         )
+  //                       : widget.clearOption
+  //                           ? InkWell(
+  //                               onTap: clearFun,
+  //                               child: Icon(
+  //                                 widget.clearIconProperty?.icon ?? Icons.clear,
+  //                                 size: widget.clearIconProperty?.size,
+  //                                 color: widget.clearIconProperty?.color,
+  //                               ),
+  //                             )
+  //                           : null,
+  //                 ),
+  //         ),
+  //       );
+  //     },
+  //   );
+  // }
 
   Future<void> _showOverlay() async {
     _controller.forward();
