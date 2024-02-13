@@ -376,11 +376,11 @@ class _DropDownTextFieldState extends State<DropDownTextField>
     } else if (_dropDownList.length == 3) {
       return _dropDownList.length * _listTileHeight - 70;
     } else if (_dropDownList.length == 4) {
-      return _dropDownList.length * _listTileHeight - 85;
+      return _dropDownList.length * _listTileHeight - 95;
     } else if (_dropDownList.length == 5) {
-      return _dropDownList.length * _listTileHeight - 90;
-    } else if (_dropDownList.length == 6) {
       return _dropDownList.length * _listTileHeight - 105;
+    } else if (_dropDownList.length == 6) {
+      return _dropDownList.length * _listTileHeight - 120;
     } else {
       // Handle other cases if needed
       return _dropDownList.length * _listTileHeight;
