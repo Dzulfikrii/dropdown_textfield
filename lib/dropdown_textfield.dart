@@ -454,11 +454,11 @@ class _DropDownTextFieldState extends State<DropDownTextField>
 
       _height = (!widget.isMultiSelection
               ? (_dropDownList.length < _maxListItem
-                  ? _dropDownList.length * _listTileHeight - 120
-                  : _listTileHeight * _maxListItem.toDouble() - 120)
+                  ? _dropDownList.length * _listTileHeight - 80
+                  : _listTileHeight * _maxListItem.toDouble() - 80)
               : _dropDownList.length < _maxListItem
-                  ? _dropDownList.length * _listTileHeight
-                  : _listTileHeight * _maxListItem.toDouble() - 120) +
+                  ? _dropDownList.length * _listTileHeight - 120
+                  : _listTileHeight * _maxListItem.toDouble()) +
           10;
     });
   }
