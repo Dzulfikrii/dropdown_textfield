@@ -476,7 +476,7 @@ class _DropDownTextFieldState extends State<DropDownTextField>
               ? (_dropDownList.length < _maxListItem
                   ? calculateDropdownHeight(_dropDownList)
                   :
-                  _listTileHeight * _maxListItem.toDouble() - 150)
+                  _listTileHeight * _maxListItem.toDouble() - 145)
               : _dropDownList.length < _maxListItem
                   ? _dropDownList.length * _listTileHeight
                   : _listTileHeight * _maxListItem.toDouble()) +
