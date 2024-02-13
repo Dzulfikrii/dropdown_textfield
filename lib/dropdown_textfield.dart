@@ -64,7 +64,7 @@ class DropDownTextField extends StatefulWidget {
       this.dropdownRadius = 12,
       this.textFieldDecoration,
       this.dropDownIconProperty,
-      this.dropDownItemCount = 3,
+      this.dropDownItemCount = 6,
       this.searchFocusNode,
       this.textFieldFocusNode,
       this.searchAutofocus = false,
@@ -112,7 +112,7 @@ class DropDownTextField extends StatefulWidget {
       this.dropdownRadius = 12,
       this.dropDownIconProperty,
       this.textFieldDecoration,
-      this.dropDownItemCount = 3,
+      this.dropDownItemCount = 6,
       this.searchFocusNode,
       this.textFieldFocusNode,
       this.listSpace = 0,
@@ -454,7 +454,7 @@ class _DropDownTextFieldState extends State<DropDownTextField>
 
       _height = (!widget.isMultiSelection
               ? (_dropDownList.length < _maxListItem
-                  ? _dropDownList.length * _listTileHeight - 30
+                  ? _dropDownList.length * _listTileHeight - 40
                   : _listTileHeight * _maxListItem.toDouble() - 120)
               : _dropDownList.length < _maxListItem
                   ? _dropDownList.length * _listTileHeight
