@@ -112,7 +112,7 @@ class DropDownTextField extends StatefulWidget {
       this.dropdownRadius = 12,
       this.dropDownIconProperty,
       this.textFieldDecoration,
-      this.dropDownItemCount = 6,
+      this.dropDownItemCount = 3,
       this.searchFocusNode,
       this.textFieldFocusNode,
       this.listSpace = 0,
