@@ -1225,7 +1225,7 @@ class _MultiSelectionState extends State<MultiSelection> {
               child: SizedBox.shrink(),
             ),
             Padding(
-              padding: const EdgeInsets.only(right: 8.0, top: 15, bottom: 10),
+              padding: const EdgeInsets.only(right: 8.0, top: 15, bottom: 0),
               child: InkWell(
                 onTap: () => widget.onChanged(multiSelectionValue),
                 child: Container(
