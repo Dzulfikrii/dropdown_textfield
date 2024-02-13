@@ -380,7 +380,7 @@ class _DropDownTextFieldState extends State<DropDownTextField>
     } else if (_dropDownList.length == 5) {
       return _dropDownList.length * _listTileHeight - 115;
     } else if (_dropDownList.length == 6) {
-      return _dropDownList.length * _listTileHeight - 130;
+      return _dropDownList.length * _listTileHeight - 140;
     } else {
       // Handle other cases if needed
       return _dropDownList.length * _listTileHeight;
