@@ -1078,7 +1078,7 @@ class _SingleSelectionState extends State<SingleSelection> {
                         left: 10,
                         right: 10,
                         bottom: 4,
-                        top: widget.listPadding.top),
+                        top: 0),
                     child: Align(
                       alignment: Alignment.centerLeft,
                       child: Text(
