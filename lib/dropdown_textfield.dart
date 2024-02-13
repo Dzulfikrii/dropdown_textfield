@@ -657,7 +657,7 @@ class _DropDownTextFieldState extends State<DropDownTextField>
     double dropdownListHeight = _height +
         (widget.enableSearch ? _searchWidgetHeight : 0) +
         widget.listSpace;
-    double ht = dropdownListHeight + 120;
+    double ht = dropdownListHeight;
     if (_searchAutofocus &&
         !(posFromBot < ht) &&
         posFromBot < _keyboardHeight &&
@@ -1078,7 +1078,7 @@ class _SingleSelectionState extends State<SingleSelection> {
                         left: 10,
                         right: 10,
                         bottom: 4,
-                        top: 0),
+                        top: 4),
                     child: Align(
                       alignment: Alignment.centerLeft,
                       child: Text(
