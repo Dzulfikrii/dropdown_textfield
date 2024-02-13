@@ -1021,7 +1021,7 @@ class _SingleSelectionState extends State<SingleSelection> {
           SizedBox(
             height: widget.searchHeight,
             child: Padding(
-              padding: const EdgeInsets.all(12.0),
+              padding: const EdgeInsets.only(left: 12.0, right: 12.0),
               child: TextField(
                 focusNode: widget.searchFocusNode,
                 showCursor: widget.searchShowCursor,
@@ -1225,7 +1225,7 @@ class _MultiSelectionState extends State<MultiSelection> {
               child: SizedBox.shrink(),
             ),
             Padding(
-              padding: const EdgeInsets.only(right: 8.0, top: 15, bottom: 0),
+              padding: const EdgeInsets.only(right: 8.0, top: 15, bottom: 10),
               child: InkWell(
                 onTap: () => widget.onChanged(multiSelectionValue),
                 child: Container(
