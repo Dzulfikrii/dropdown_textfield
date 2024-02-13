@@ -64,7 +64,7 @@ class DropDownTextField extends StatefulWidget {
       this.dropdownRadius = 12,
       this.textFieldDecoration,
       this.dropDownIconProperty,
-      this.dropDownItemCount = 4,
+      this.dropDownItemCount = 6,
       this.searchFocusNode,
       this.textFieldFocusNode,
       this.searchAutofocus = false,
@@ -367,6 +367,26 @@ class _DropDownTextFieldState extends State<DropDownTextField>
     return textPainter.size;
   }
 
+  double calculateDropdownHeight(List<dynamic> _dropDownList) {
+    double _listTileHeight = 50.0; // Assuming the height of each list tile
+    if (_dropDownList.length == 1) {
+      return _dropDownList.length * _listTileHeight - 30;
+    } else if (_dropDownList.length == 2) {
+      return _dropDownList.length * _listTileHeight - 40;
+    } else if (_dropDownList.length == 3) {
+      return _dropDownList.length * _listTileHeight - 50;
+    } else if (_dropDownList.length == 4) {
+      return _dropDownList.length * _listTileHeight - 60;
+    } else if (_dropDownList.length == 5) {
+      return _dropDownList.length * _listTileHeight - 70;
+    } else if (_dropDownList.length == 6) {
+      return _dropDownList.length * _listTileHeight - 80;
+    } else {
+      // Handle other cases if needed
+      return _dropDownList.length * _listTileHeight;
+    }
+  }
+
   updateFunction({DropDownTextField? oldWidget}) {
     Function eq = const DeepCollectionEquality().equals;
     _dropDownList = List.from(widget.dropDownList);
@@ -454,8 +474,9 @@ class _DropDownTextFieldState extends State<DropDownTextField>
 
       _height = (!widget.isMultiSelection
               ? (_dropDownList.length < _maxListItem
-                  ? _dropDownList.length == 1 ? _dropDownList.length * _listTileHeight - 30 : _dropDownList.length * _listTileHeight - 50
-                  : _listTileHeight * _maxListItem.toDouble() - 120)
+                  ? calculateDropdownHeight(_dropDownList)
+                  :
+                  _listTileHeight * _maxListItem.toDouble() - 120)
               : _dropDownList.length < _maxListItem
                   ? _dropDownList.length * _listTileHeight
                   : _listTileHeight * _maxListItem.toDouble()) +
