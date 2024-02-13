@@ -372,15 +372,15 @@ class _DropDownTextFieldState extends State<DropDownTextField>
     if (_dropDownList.length == 1) {
       return _dropDownList.length * _listTileHeight - 30;
     } else if (_dropDownList.length == 2) {
-      return _dropDownList.length * _listTileHeight - 40;
+      return _dropDownList.length * _listTileHeight - 45;
     } else if (_dropDownList.length == 3) {
-      return _dropDownList.length * _listTileHeight - 50;
+      return _dropDownList.length * _listTileHeight - 55;
     } else if (_dropDownList.length == 4) {
-      return _dropDownList.length * _listTileHeight - 60;
+      return _dropDownList.length * _listTileHeight - 65;
     } else if (_dropDownList.length == 5) {
-      return _dropDownList.length * _listTileHeight - 70;
+      return _dropDownList.length * _listTileHeight - 75;
     } else if (_dropDownList.length == 6) {
-      return _dropDownList.length * _listTileHeight - 80;
+      return _dropDownList.length * _listTileHeight - 85;
     } else {
       // Handle other cases if needed
       return _dropDownList.length * _listTileHeight;
