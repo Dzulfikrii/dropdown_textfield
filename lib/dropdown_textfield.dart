@@ -1098,8 +1098,8 @@ class _SingleSelectionState extends State<SingleSelection> {
                     padding: EdgeInsets.only(
                         left: 10,
                         right: 10,
-                        bottom: 4,
-                        top: 4),
+                        bottom: 8,
+                        top: 8),
                     child: Align(
                       alignment: Alignment.centerLeft,
                       child: Text(
