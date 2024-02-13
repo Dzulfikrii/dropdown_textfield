@@ -370,13 +370,13 @@ class _DropDownTextFieldState extends State<DropDownTextField>
   double calculateDropdownHeight(List<dynamic> _dropDownList) {
     double _listTileHeight = 50.0; // Assuming the height of each list tile
     if (_dropDownList.length == 1) {
-      return _dropDownList.length * _listTileHeight - 30;
+      return _dropDownList.length * _listTileHeight - 25;
     } else if (_dropDownList.length == 2) {
       return _dropDownList.length * _listTileHeight - 45;
     } else if (_dropDownList.length == 3) {
-      return _dropDownList.length * _listTileHeight - 60;
+      return _dropDownList.length * _listTileHeight - 70;
     } else if (_dropDownList.length == 4) {
-      return _dropDownList.length * _listTileHeight - 75;
+      return _dropDownList.length * _listTileHeight - 85;
     } else if (_dropDownList.length == 5) {
       return _dropDownList.length * _listTileHeight - 90;
     } else if (_dropDownList.length == 6) {
